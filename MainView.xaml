@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="RestaurantManagement.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:RestaurantManagement.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="900" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Row="1" Grid.Column="1"
+                Content="{Binding MainContent}"
+                Margin="20"/>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#9400d3" Height="60">
+            <TextBlock Text="🍽️ Quản lý Nhà Hàng" Foreground="White" FontSize="24" FontWeight="Bold"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#1F2B3D" Orientation="Vertical">
+            <Button Content="👥 Khách hàng" Margin="10" Padding="10" Command="{Binding ViewCustomerCommand}"
+            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
+            <Button Content="🧑‍🍳 Nhân viên" Margin="10" Padding="10" Command="{Binding ViewStaffCommand}"
+            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
+            <Button Content="🍽️ Bàn ăn" Margin="10" Padding="10" Command="{Binding ViewTableCommand}"
+            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
+            <Button Content="📋 Menu" Margin="10" Padding="10" Command="{Binding ViewMenuCommand}"
+            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
+            <Button Content="🧾 Đơn hàng / Thanh toán" Margin="10" Padding="10" Command="{Binding ViewOrderAndPaymentCommand}"
+            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
+            <Button Content="🎁 Ưu đãi" Margin="10" Padding="10" Command="{Binding ViewPromotionCommand}"
+            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
+            <Button Content="📊 Doanh thu" Margin="10" Padding="10" Command="{Binding ViewStatisticsCommand}"
+            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
+            <Button Content="💬 Phản hồi" Margin="10" Padding="10" Command="{Binding ViewFeedbackCommand}"
+            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
+        </StackPanel>
+
+
+        <!-- Content Area -->
+        <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding MainContent}" Margin="20"/>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#E3F2FD" Height="30">
+            <DockPanel VerticalAlignment="Center" Margin="10,0">
+                <TextBlock Text="{Binding Status}" DockPanel.Dock="Left" Foreground="#0D47A1" FontWeight="Bold"/>
+                <TextBlock Text="{Binding CurrentDateTime}" DockPanel.Dock="Right" Foreground="#0D47A1"/>
+            </DockPanel>
+        </Border>
+    </Grid>
+</UserControl>

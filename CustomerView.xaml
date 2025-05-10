@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="RestaurantManagement.Views.CustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Thanh chức năng -->
+            <RowDefinition Height="*"/>
+            <!-- Nội dung động -->
+        </Grid.RowDefinitions>
+
+        <!-- Dãy nút chức năng -->
+        <StackPanel Orientation="Horizontal">
+            <Button Content="🖥️ Đăng xuất" Width="80" FontSize="11" Margin="5"/>
+            <Button Content="➕ Thêm" Width="60" FontSize="11" Margin="5"/>
+            <Button Content="✏️ Sửa" Width="60" FontSize="11" Margin="5"/>
+            <Button Content="🗑️ Xóa" Width="60" FontSize="11" Margin="5"/>
+            <Button Content="📄 Lịch sử đơn hàng" Width="120" FontSize="11" Margin="5"/>
+            <Button Content="🔍 Tìm kiếm" Width="80" FontSize="11" Margin="5"/>
+            <Button Content="📊 Thống kê" Width="80" FontSize="11" Margin="5"/>
+        </StackPanel>
+
+
+        <!-- Vùng nội dung bên dưới -->
+        <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="1">
+           
+        </Border>
+    </Grid>
+</UserControl>
