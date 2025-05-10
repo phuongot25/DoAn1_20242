@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="RestaurantManagement.Views.FeedbackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Thanh nút chức năng -->
+            <RowDefinition Height="*"/>
+            <!-- Danh sách phản hồi -->
+        </Grid.RowDefinitions>
+
+        <!-- Dãy nút chức năng -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+            <Button Content="➕ Thêm phản hồi" Margin="5" Padding="10,5"/>
+            <Button Content="✏️ Sửa phản hồi" Margin="5" Padding="10,5"/>
+            <Button Content="🗑️ Xóa phản hồi" Margin="5" Padding="10,5"/>
+            <Button Content="📊 Thống kê phản hồi" Margin="5" Padding="10,5"/>
+        </StackPanel>
+
+        <!-- Danh sách phản hồi -->
+        <DataGrid Grid.Row="1"
+                  ItemsSource="{Binding FeedbackList}"
+                  SelectedItem="{Binding SelectedFeedback}"
+                  AutoGenerateColumns="True"
+                  IsReadOnly="True"/>
+    </Grid>
+</UserControl>
